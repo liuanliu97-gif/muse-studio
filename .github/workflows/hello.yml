@@ -1,0 +1,17 @@
+name: hello
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 打招呼并自检
+        run: |
+          echo "Hello from Muse AI Studio!"
+          echo "Runner: $(uname -a)"
+          echo "Date: $(date -u)"
+          df -h / | tail -1
+          free -m | head -2
